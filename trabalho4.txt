@@ -1,0 +1,15 @@
+Programação de Computadores III
+José Gonçalo dos Santos
+Rafael Umetsu - 181057600040
+link do git: https://github.com/RWaiti/trabalho4PC3
+
+java version "15.0.2" 2021-01-19
+Java(TM) SE Runtime Environment (build 15.0.2+7-27)
+Java HotSpot(TM) 64-Bit Server VM (build 15.0.2+7-27, mixed mode, sharing)
+
+empregado (cpf, nome, idade, salario);
+dependente (cpfEmpregado, nome, grauParentesco, dataNascimento);
+
+
+Funcionando a criação das duas tabelas e o CRUD. 
+Não entendi direito como faz o put ligando as duas tabelas, mas o funcionamento está de acordo com a explicação do Aula13CRUDWebServiceRest.pdf
