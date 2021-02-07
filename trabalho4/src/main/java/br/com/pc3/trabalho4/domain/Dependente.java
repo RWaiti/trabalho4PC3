@@ -1,27 +1,34 @@
 package br.com.pc3.trabalho4.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "dependente")
 public class Dependente { 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
+	private Long id;
+	@Column(name = "cpfDependente")
 	private Integer cpfDependente;
+	@Column(name = "nome")
 	private String nome;
+	@Column(name = "grauParentesco")
 	private String grauParentesco;
+	@Column(name = "dataNascimento")
 	private String dataNascimento;
 	
-	
+	@ManyToOne @JoinColumn(name="cpf")
+	private Empregado empregado;
 
-	public Dependente(Integer cpfDependente, String nome, String grauParentesco, String dataNascimento) {
-		super();
-		this.cpfDependente = cpfDependente;
-		this.nome = nome;
-		this.grauParentesco = grauParentesco;
-		this.dataNascimento = dataNascimento;
+	public Dependente() {
 	}
 
 	public String getNome() {

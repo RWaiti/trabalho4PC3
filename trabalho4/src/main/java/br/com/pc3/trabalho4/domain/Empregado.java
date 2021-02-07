@@ -1,20 +1,36 @@
 package br.com.pc3.trabalho4.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "empregado")
 public class Empregado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id")
 	private Long id;
+	@Column(name = "cpf")
 	private Integer cpf;
+	@Column(name = "nome")
 	private String nome;
+	@Column(name = "salario")
 	private Double salario;
-	//private Dependente dependente;
-
+	@Column(name = "cpf")
+	
+	@OneToMany (mappedBy="empregado",targetEntity=Dependente.class, cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	private List<Dependente> dependente;
+	
 	public Empregado() {
 	}
 
