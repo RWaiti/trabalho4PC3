@@ -6,5 +6,6 @@ import br.com.pc3.trabalho4.domain.Empregado;
 
 @Repository
 public interface EmpregadoRepository extends CrudRepository<Empregado, Long>{
+//	List<Empregado> findByCpf(Integer cpf);
 	
 }

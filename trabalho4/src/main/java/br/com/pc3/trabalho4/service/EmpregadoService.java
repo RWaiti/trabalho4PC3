@@ -10,8 +10,7 @@ import br.com.pc3.trabalho4.domain.Empregado;
 import br.com.pc3.trabalho4.repository.EmpregadoRepository;
 
 @Service
-public class EmpregadoService
-{
+public class EmpregadoService {
 	@Autowired
 	private EmpregadoRepository empregadoRepository;
 
@@ -26,11 +25,16 @@ public class EmpregadoService
 	public Optional<Empregado> findById(Long id) {
 		return empregadoRepository.findById(id);
 	}
-	
+
 	public Empregado update(Empregado empregado) {
 		return empregadoRepository.save(empregado);
 	}
+
 	public void deleteById(Long id) {
 		empregadoRepository.deleteById(id);
 	}
+
+//	public List<Empregado> findByCpf(Integer cpf) {
+//		return (List<Empregado>) empregadoRepository.findByCpf(cpf);
+//	}
 }

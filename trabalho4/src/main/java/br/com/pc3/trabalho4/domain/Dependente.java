@@ -25,7 +25,7 @@ public class Dependente {
 	@Column(name = "dataNascimento")
 	private String dataNascimento;
 
-	@ManyToOne @JoinColumn(name="cpf")
+	@ManyToOne @JoinColumn(name="id_empregado", nullable = true, updatable = true)
 	private Empregado empregado;
 
 	public Dependente() {

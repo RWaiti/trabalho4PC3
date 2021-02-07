@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,7 +16,7 @@ import br.com.pc3.trabalho4.domain.Empregado;
 import br.com.pc3.trabalho4.service.EmpregadoService;
 
 @RestController
-@RequestMapping("/api/v1/trabalho4")
+@RequestMapping("/api/v1/empregado")
 public class EmpregadoResource {
 	@Autowired
 	private EmpregadoService empregadoService;
@@ -49,4 +50,15 @@ public class EmpregadoResource {
 			throw new RuntimeException("Não foi possível alterar registro");
 		}
 	}
+
+	@DeleteMapping(path = { "/{id}" })
+	public void delete(@PathVariable("id") Long id) {
+		empregadoService.deleteById(id);
+	}
+
+//	@GetMapping(path = { "/{cpf}" })
+//	public ResponseEntity<?> findByCpf(@PathVariable("cpf") Integer cpf) {
+//		List<Empregado> empregado = empregadoService.findByCpf(cpf);
+//		return empregado.isEmpty() ? ResponseEntity.noContent().build() : ResponseEntity.ok(empregado);
+//	}
 }
