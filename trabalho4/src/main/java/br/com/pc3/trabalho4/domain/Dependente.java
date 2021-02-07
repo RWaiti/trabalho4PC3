@@ -24,7 +24,7 @@ public class Dependente {
 	private String grauParentesco;
 	@Column(name = "dataNascimento")
 	private String dataNascimento;
-	
+
 	@ManyToOne @JoinColumn(name="cpf")
 	private Empregado empregado;
 

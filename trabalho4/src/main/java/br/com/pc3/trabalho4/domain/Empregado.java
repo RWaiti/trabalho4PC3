@@ -10,7 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 @Entity
@@ -26,8 +25,7 @@ public class Empregado {
 	private String nome;
 	@Column(name = "salario")
 	private Double salario;
-	@Column(name = "cpf")
-	
+
 	@OneToMany (mappedBy="empregado",targetEntity=Dependente.class, cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Dependente> dependente;
 	
