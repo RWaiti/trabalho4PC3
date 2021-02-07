@@ -9,6 +9,7 @@ import javax.persistence.Id;
 public class Empregado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private Integer cpf;
 	private String nome;
 	private Double salario;
