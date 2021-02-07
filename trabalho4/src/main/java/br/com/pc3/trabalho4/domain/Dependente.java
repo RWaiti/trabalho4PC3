@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Dependente {
+public class Dependente { 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cpfDependente;

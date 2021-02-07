@@ -1,12 +1,18 @@
 package br.com.pc3.trabalho4.service;
 
-import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import br.com.pc3.trabalho4.domain.Empregado;
 import br.com.pc3.trabalho4.repository.EmpregadoRepository;
 
+@Service
 public class EmpregadoService {
-	public List<Empregado> ListarTodos(){
-		EmpregadoRepository empregadoRepository = new EmpregadoRepository();
-		return empregadoRepository.listarTodos();
-	}
+	@Autowired
+	private EmpregadoRepository empregadoRepository;
+	
+	public Empregado save(Empregado empregado) {
+		return empregadoRepository.save(empregado);
+	}	
 }

@@ -1,6 +1,5 @@
 package br.com.pc3.trabalho4.domain;
 
-import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,13 +12,9 @@ public class Empregado {
 	private Integer cpf;
 	private String nome;
 	private Double salario;
-	private List<Dependente> dependente;
+	//private Dependente dependente;
 
-	public Empregado(Integer cpf, String nome, Double salario, List<Dependente> dependente) {
-		this.cpf = cpf;
-		this.nome = nome;
-		this.salario = salario;
-		this.dependente = dependente;
+	public Empregado() {
 	}
 
 	public Integer getCpf() {
@@ -46,11 +41,13 @@ public class Empregado {
 		this.salario = salario;
 	}
 
-	public List<Dependente> getDependente() {
-		return dependente;
-	}
+//	public Dependente getDependente() {
+//		return dependente;
+//	}
+//
+//	public void setDependente(Dependente dependente) {
+//		this.dependente = dependente;
+//	}
 
-	public void setDependente(List<Dependente> dependente) {
-		this.dependente = dependente;
-	}
+
 }
