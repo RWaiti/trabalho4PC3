@@ -15,8 +15,11 @@ public class Empregado {
 	private Double salario;
 	private List<Dependente> dependente;
 
-	public Empregado() {
-
+	public Empregado(Integer cpf, String nome, Double salario, List<Dependente> dependente) {
+		this.cpf = cpf;
+		this.nome = nome;
+		this.salario = salario;
+		this.dependente = dependente;
 	}
 
 	public Integer getCpf() {

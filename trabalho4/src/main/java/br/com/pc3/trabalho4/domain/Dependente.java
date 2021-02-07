@@ -13,9 +13,15 @@ public class Dependente {
 	private String nome;
 	private String grauParentesco;
 	private String dataNascimento;
-	private Empregado empregado;
 	
-	public Dependente() {
+	
+
+	public Dependente(Integer cpfDependente, String nome, String grauParentesco, String dataNascimento) {
+		super();
+		this.cpfDependente = cpfDependente;
+		this.nome = nome;
+		this.grauParentesco = grauParentesco;
+		this.dataNascimento = dataNascimento;
 	}
 
 	public String getNome() {
@@ -50,12 +56,5 @@ public class Dependente {
 		this.cpfDependente = cpfDependente;
 	}
 
-	public Empregado getEmpregado() {
-		return empregado;
-	}
-
-	public void setEmpregado(Empregado empregado) {
-		this.empregado = empregado;
-	}
 
 }
